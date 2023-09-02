@@ -15,13 +15,14 @@ if menu == 'BMI 지수 계산기':
     체중 = st.number_input('몸무게를 입력하세요.(kg)', step=1)
     btn = st.button('계산하기')
     if btn:
-        st.write('당신의 BMI지수는,',체중/(키*키), '입니다.')
-    if btn:
-        체중/(키*키) > 20
-        st.write('저체중 입니다')
-    elif btn:
-        20 < 체중/(키*키) < 24
-        st.write('정상입니다')
+        키 = 키 / 100
+        st.write('당신의 BMI지수는,', 체중 / (키 * 키), '입니다.')
+        if 체중 / (키 * 키) < 20:
+            st.write('저체중 입니다')
+        elif 20 < 체중 / (키 * 키) < 24:
+            st.write('정상입니다')
+        elif 24 < 체중 / (키*키) < 30:
+            st.write('과체중입니다')
 
 
 
